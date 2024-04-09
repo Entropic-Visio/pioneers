@@ -128,13 +128,13 @@
   border-radius: 20px;
   border: 0;
   outline: 0;
-  transition: background 1s;
+  transition: background 0.5s;
   margin-top: 15px;
 }
 .form-box__button-field button:hover {
   cursor: pointer;
-  background-color: #121212;
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #1c1c1c;
 }
 .form-box__redirect__text {
   text-align: left;
@@ -144,6 +144,10 @@
 .form-box__redirect__link {
   text-decoration: none;
   color: #9ee4a7;
+  transition: color 0.5s ease;
+}
+.form-box__redirect__link:hover {
+  color: #388659;
 }
 
 /* COMPONENTS */
