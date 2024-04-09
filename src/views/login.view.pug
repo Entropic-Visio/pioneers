@@ -7,13 +7,9 @@ html
     title Pioneer | Sign Up
   body.page
     .form-box 
-      h1.form-box__title Sign Up 
+      h1.form-box__title Login 
       form(action="/register" method="POST")
       .form-box__input-group 
-        .form-box__input-field 
-          i.form-box__icon.fa-solid.fa-user 
-          input.form-box__input(type="name" name="username" placeholder="Username")
-
         .form-box__input-field 
           i.form-box__icon.__icon.fa-solid.fa-envelope 
           input.form-box__input(type="email" name="email" placeholder="Email")
@@ -22,12 +18,11 @@ html
           i.form-box__icon.__icon.fa-solid.fa-key 
           input.form-box__input(type="password" name="password" placeholder="Password")
         
-        .form-box__input-field 
-          i.form-box__icon.fa-solid.fa-key 
-          input.form-box__input(type="password" name="confirmPassword" placeholder="Confirm Password")
-        
-        p.form-box__redirect__text Already Have an Account?  
-          a.form-box__redirect__link(href="/login") Login  
+        p.form-box__redirect__text
+          a.form-box__redirect__link(href="/") Forgot Password?
+        p.form-box__redirect__text Don't Have An Account? 
+          a.form-box__redirect__link(href="/register") Create Account  
 
         .form-box__button-field
-            button(type="login") Register  
+            button(type="login") Login 
+      

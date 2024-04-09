@@ -75,6 +75,77 @@
   transition: all 0.3s ease;
 }
 
+.form-box {
+  width: 90%;
+  max-width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #52AA5E;
+  padding: 50px 60px 70px;
+  text-align: center;
+  border-radius: 10px;
+}
+.form-box__title {
+  font-size: 30px;
+  margin-bottom: 60px;
+  color: #FFFFFF;
+  position: relative;
+}
+.form-box__input-field {
+  background: #eaeaea;
+  margin: 15px 0;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+.form-box__input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 18px 15px;
+  padding: 18px 15px;
+}
+.form-box__icon {
+  margin-left: 15px;
+  color: #999;
+}
+.form-box__button-field {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.form-box__button-field button {
+  font-size: 18px;
+  font-weight: 600;
+  flex-basis: 48%;
+  background-color: #388659;
+  color: #fff;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  transition: background 1s;
+  margin-top: 15px;
+}
+.form-box__button-field button:hover {
+  cursor: pointer;
+  background-color: #121212;
+  color: #FFFFFF;
+}
+.form-box__redirect__text {
+  text-align: left;
+  font-size: 13px;
+  color: #fff;
+}
+.form-box__redirect__link {
+  text-decoration: none;
+  color: #9ee4a7;
+}
+
 /* COMPONENTS */
 .page {
   font-family: "Poppins", sans-serif;
