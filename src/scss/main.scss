@@ -1,6 +1,7 @@
 @import 'navbar';
 @import 'colours';
 @import 'fonts';
+@import 'login-register-form';
 
 /* COMPONENTS */
 .page {
@@ -9,7 +10,7 @@
 
     &__heading {
         font-size: 40px;
-        font-weight: 500;
+        font-weight: 700;
         text-align: center;
         color: $green;
     }

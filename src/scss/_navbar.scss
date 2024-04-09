@@ -58,10 +58,26 @@
             justify-content: center;
             text-decoration: none;
             padding: 0 1rem;
+            transition: 0.5s ease;
 
             &:hover {
                 color: $white;
                 transform: all 0.3s ease;
+            }
+        }
+
+        #button {
+            padding: 12px 24px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            background: $darkgreen;
+            margin-left: 16px;
+            color: $white;
+        
+            &:hover {
+                background: $darkgrey;
+                transition: all 0.3s ease;
             }
         }
     }
