@@ -1,10 +1,8 @@
 const express = require('express');
-const { GetAboutView } = require('../controllers/about.controller.js');
+const controller = require('../controllers/about.controller.js');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    GetAboutView(req, res);
-});
+router.get('/', controller.GetAboutView);
 
 module.exports = router;

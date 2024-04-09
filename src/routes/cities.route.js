@@ -1,10 +1,8 @@
 const express = require('express');
-const { GetAllCities } = require('../controllers/cities.controller.js');
+const controller = require('../controllers/cities.controller.js');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    GetAllCities(req, res);
-});
+router.get('/', controller.GetAllCities);
 
 module.exports = router;

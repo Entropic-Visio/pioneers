@@ -1,10 +1,8 @@
 const express = require('express');
-const { GetHomeView } = require('../controllers/home.controller.js');
+const controller = require('../controllers/home.controller.js');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    GetHomeView(req, res);
-});
+router.get('/', controller.GetHomeView);
 
 module.exports = router;
