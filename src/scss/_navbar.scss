@@ -15,6 +15,7 @@
     padding: 0.5rem calc((100vw - 1200px)/2);
     z-index: 10;
     position: relative;
+    border-radius: 10px;
 
     &__logo {
         font-family: $poppins;
