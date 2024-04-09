@@ -2,6 +2,7 @@
 
 $primary-color: #56AA4B;
 $secondary-color: #ffffff;
+$teritary-color: #ff0000;
 
 .page {
     font-family: 'Poppins', sans-serif;
@@ -10,11 +11,13 @@ $secondary-color: #ffffff;
         font-size: 40px;
         font-weight: 500;
         text-align: center;
+        color: $teritary-color;
     }
 
     &__text-block {
         font-size: 18px;
         font-weight: 300;
         text-align: center;
+        color: $primary-color;
     }
 }

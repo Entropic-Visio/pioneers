@@ -12,7 +12,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/", homeRoute);
-app.use("/about", aboutRoute);
+app.use("/jack", aboutRoute);
 
 app.listen(port, () => {
     console.log(`Server is listening on http://localhost:${port}`);
