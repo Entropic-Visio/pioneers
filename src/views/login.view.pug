@@ -8,19 +8,17 @@ html
   body.page
     .form-box 
       h1.form-box__title Login 
-      form(action="/register" method="POST")
-      .form-box__input-group 
-        .form-box__input-field 
-          i.form-box__icon.__icon.fa-solid.fa-envelope 
-          input.form-box__input(type="email" name="email" placeholder="Email")
+      form(action="/login" method="POST")
+        .form-box__input-group 
+          .form-box__input-field 
+            i.form-box__icon.__icon.fa-solid.fa-envelope 
+            input.form-box__input(type="email" name="email" placeholder="Email")
+          .form-box__input-field 
+            i.form-box__icon.__icon.fa-solid.fa-key 
+            input.form-box__input(type="password" name="password" placeholder="Password")
+          
+          p.form-box__redirect__text Don't Have An Account? 
+            a.form-box__redirect__link(href="/signup") Create Account  
 
-        .form-box__input-field 
-          i.form-box__icon.__icon.fa-solid.fa-key 
-          input.form-box__input(type="password" name="password" placeholder="Password")
-        
-        p.form-box__redirect__text Don't Have An Account? 
-          a.form-box__redirect__link(href="/signup") Create Account  
-
-        .form-box__button-field
-            button(type="login") Login 
-      
+          .form-box__button-field
+            button(type="submit") Login
