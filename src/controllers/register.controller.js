@@ -1,8 +1,8 @@
-const GetSignUpView = (req, res) => {
-    return res.render('signup.view.pug');
+const GetRegisterView = (req, res) => {
+    return res.render('register.view.pug');
 };
 
-const SignUpUser = (req, res) => {
+const RegisterUser = (req, res) => {
     const username = req.body.username;
     const email = req.body.email;
     const password = req.body.password;
@@ -16,7 +16,7 @@ const SignUpUser = (req, res) => {
     console.log('Email:', email);
     console.log('Password:', password);
 
-    res.send('Registration successful');
+    res.send('Registration Successful');
 };
 
-module.exports = { GetSignUpView, SignUpUser }
+module.exports = { GetRegisterView, RegisterUser }
