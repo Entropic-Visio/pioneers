@@ -1,24 +1,18 @@
+// Import Modules
 @import 'navbar';
 @import 'colours';
 @import 'fonts';
 @import 'login-register-form';
+@import 'page';
 
-/* COMPONENTS */
-.page {
-    font-family: $poppins;
-    background: $darkgreen;
-
-    &__heading {
-        font-size: 40px;
-        font-weight: 700;
-        text-align: center;
-        color: $green;
-    }
-
-    &__text-block {
-        font-size: 18px;
-        font-weight: 300;
-        text-align: center;
-        color: $white;
-    }
+// Critical CSS Removes White Flashes on Page Load
+body {
+    background-color: $darkgreen;
 }
+
+// Load Modules
+@import url('navbar') print;
+@import url('colours') print;
+@import url('fonts') print;
+@import url('login-register-form') print;
+@import url('page') print;

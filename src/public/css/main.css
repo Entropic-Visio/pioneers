@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("navbar") print;
+@import url("colours") print;
+@import url("fonts") print;
+@import url("login-register-form") print;
+@import url("page") print;
 .navbar__menu--links, .navbar__menu, .navbar__logo {
   display: flex;
   align-items: center;
@@ -24,6 +30,11 @@
   text-decoration: none;
   font-size: 2rem;
   margin-left: 24px;
+  transition: 0.5s ease;
+}
+.navbar__logo:hover {
+  color: #FFFFFF;
+  transform: all 0.3s ease;
 }
 .navbar__bars {
   opacity: 0;
@@ -149,8 +160,12 @@
 .form-box__redirect__link:hover {
   color: #388659;
 }
+.form-box__error {
+  font-size: 13px;
+  text-align: left;
+  color: #ff0000;
+}
 
-/* COMPONENTS */
 .page {
   font-family: "Poppins", sans-serif;
   background: #388659;
@@ -166,6 +181,10 @@
   font-weight: 300;
   text-align: center;
   color: #FFFFFF;
+}
+
+body {
+  background-color: #388659;
 }
 
 /*# sourceMappingURL=main.css.map */

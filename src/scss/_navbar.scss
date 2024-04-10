@@ -26,6 +26,12 @@
         font-size: 2rem;
         margin-left: 24px;
         @extend %align-center;
+        transition: 0.5s ease;
+
+        &:hover {
+            color: $white;
+            transform: all 0.3s ease;
+        }
     }
 
     &__bars {

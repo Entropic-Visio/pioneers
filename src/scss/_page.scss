@@ -1,0 +1,21 @@
+@import 'colours';
+@import 'fonts';
+
+.page {
+    font-family: $poppins;
+    background: $darkgreen;
+
+    &__heading {
+        font-size: 40px;
+        font-weight: 700;
+        text-align: center;
+        color: $green;
+    }
+
+    &__text-block {
+        font-size: 18px;
+        font-weight: 300;
+        text-align: center;
+        color: $white;
+    }
+}

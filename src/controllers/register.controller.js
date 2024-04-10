@@ -3,14 +3,15 @@ const GetRegisterView = (req, res) => {
 };
 
 const RegisterUser = (req, res) => {
-    const username = req.body.username;
-    const email = req.body.email;
-    const password = req.body.password;
-    const confirmPassword = req.body.confirmPassword;
+    const { username, email, password, confirmPassword } = req.body;
+
+    if (username === "" || email === "" || password === "" || confirmPassword === "") {
+        return res.send('Bad Credentials');
+    };
 
     if (password !== confirmPassword) {
-        return res.status(400).send('Passwords do not match');
-    }
+        return res.send('Passwords Do Not Match');
+    };
 
     console.log('Username:', username);
     console.log('Email:', email);

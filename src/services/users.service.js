@@ -21,4 +21,21 @@ async function getAllUsers() {
     }
 };
 
-module.exports = { getAllUsers };
+async function getUserFromDatabase(email, password) {
+    const sql = "SELECT * FROM `users` WHERE Email = ? and Password = ?";
+    try {
+        const [rows, fields] = await userConnection.query(sql, [email, password]);
+
+        if (rows.length === 0) {
+            return null;
+        }
+        console.log(rows[0]);
+        return rows[0];
+
+    } catch (error) {
+        console.error('Error Retrieving User from Database:', error);
+        return null;
+    }
+}
+
+module.exports = { getAllUsers, getUserFromDatabase };

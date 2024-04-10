@@ -88,4 +88,10 @@
             }
         }
     }
+
+    &__error {
+        font-size: 13px;
+        text-align: left;
+        color: #ff0000;
+    }
 }
