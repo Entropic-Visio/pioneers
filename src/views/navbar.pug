@@ -1,0 +1,7 @@
+script(src="https://kit.fontawesome.com/17c0fad60d.js" crossorigin="anonymous")
+link(rel="stylesheet", href="/css/main.css")
+
+if isLoggedIn 
+  include loggedIn.navbar.component.pug
+else 
+  include loggedOut.navbar.component.pug 

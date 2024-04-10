@@ -1,5 +1,8 @@
+const isUserLoggedIn = require('../middlewares/isUserLoggedIn.middleware.js');
+
 const GetContactView = (req, res) => {
-    return res.render('contact.view.pug');
+    const isLoggedIn = isUserLoggedIn(req);
+    return res.render('contact.view.pug', { isLoggedIn });
 }
 
 module.exports = { GetContactView }

@@ -1,7 +1,9 @@
 const userService = require('../services/users.service.js');
+const isUserLoggedIn = require('../middlewares/isUserLoggedIn.middleware.js');
 
 const GetLoginView = (req, res) => {
-    return res.render('login.view.pug');
+    const isLoggedIn = isUserLoggedIn(req);
+    return res.render('login.view.pug', { isLoggedIn });
 };
 
 const GetUserInformation = async (req, res) => {
@@ -26,7 +28,9 @@ const GetUserInformation = async (req, res) => {
             return res.render('login.view.pug', { userNotFound: true });
         }
 
-        return res.render('dashboard.view.pug');
+        req.session.isLoggedIn = true;
+        const isLoggedIn = isUserLoggedIn(req);
+        return res.render('dashboard.view.pug', { isLoggedIn });
     
     } catch {
         console.error('Error');

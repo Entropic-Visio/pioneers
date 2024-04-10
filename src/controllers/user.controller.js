@@ -1,3 +1,4 @@
+const isUserLoggedIn = require('../middlewares/isUserLoggedIn.middleware.js');
 const { getAllUsers } = require('../services/users.service.js');
 
 const GetAllUsers = async (req, res) => {

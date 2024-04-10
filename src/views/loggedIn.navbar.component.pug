@@ -19,4 +19,5 @@ nav.navbar
         .dropdown__content
           a.dropdown__content__link(href="/profile") Profile
           a.dropdown__content__link(href="/account-setting") Account Setting
-          a.dropdown__content__link(href="/logout" action="/logout", method="post") Logout
+          form(action="/logout", method="POST")
+            button.dropdown__content__button Logout  

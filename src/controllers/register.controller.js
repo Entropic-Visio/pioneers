@@ -1,3 +1,5 @@
+const isUserLoggedIn = require('../middlewares/isUserLoggedIn.middleware.js');
+
 const GetRegisterView = (req, res) => {
     return res.render('register.view.pug');
 };
