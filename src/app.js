@@ -9,6 +9,7 @@ const contactRoute = require('./routes/contact.route.js');
 const registerRoute = require('./routes/register.route.js');
 const loginRoute = require('./routes/login.route.js');
 const citiesRoute = require('./routes/cities.route.js');
+const dashboardRoute = require('./routes/dashboard.route.js');
 
 const app = express();
 const port = 3000;
@@ -26,6 +27,7 @@ app.use('/contact', contactRoute);
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
 app.use('/cities', citiesRoute);
+app.use('/dashboard', dashboardRoute);
 
 // ----------- RUN ----------- //
 app.listen(port, () => {

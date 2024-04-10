@@ -26,7 +26,7 @@ const GetUserInformation = async (req, res) => {
             return res.render('login.view.pug', { userNotFound: true });
         }
 
-        return res.send('Form Submitted Successfully');
+        return res.render('dashboard.view.pug');
     
     } catch {
         console.error('Error');

@@ -4,8 +4,19 @@ nav.navbar
   a.navbar__logo(href="/") Pioneer 
   .navbar__bars 
     i(class="fas fa-bars")
-  .navbar__menu 
-    a.navbar__menu--links(href="/") Home
-    a.navbar__menu--links(href="/about") About
-    a.navbar__menu--links(href="/contact") Contact
-    a.navbar__menu--links#button(href="/register") Get Started
+  ul.navbar__menu
+    li 
+      a.navbar__menu--links(href="/") Home
+    li
+      a.navbar__menu--links(href="/about") About
+    li 
+      a.navbar__menu--links(href="/contact") Contact
+    li 
+      a.navbar__menu--links(href="/dashboard") Dashboard  
+    li.dropdown
+      .dropdown__link 
+        i(class="fa-solid fa-user") 
+        .dropdown__content
+          a.dropdown__content__link(href="/profile") Profile
+          a.dropdown__content__link(href="/account-setting") Account Setting
+          a.dropdown__content__link(href="/logout" action="/logout", method="post") Logout
