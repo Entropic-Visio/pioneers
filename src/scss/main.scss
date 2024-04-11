@@ -1,4 +1,3 @@
-// Import Modules
 @import 'navbar';
 @import 'colours';
 @import 'fonts';
@@ -6,15 +5,9 @@
 @import 'page';
 @import 'dropdown';
 @import 'animations';
+@import 'hero';
 
 // Critical CSS Removes White Flashes on Page Load
 body {
     background-color: $darkgreen;
 }
-
-// Load Modules
-@import url('navbar') print;
-@import url('colours') print;
-@import url('fonts') print;
-@import url('login-register-form') print;
-@import url('page') print;

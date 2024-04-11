@@ -16,7 +16,7 @@ const RegisterUser = async (req, res) => {
         return res.render('register.view.pug', { passwordDontMatch: true });
     };
 
-    const results = await usersService.searchUserFromDatabase(email);
+    const results = await usersService.searchEmailInDatabase(email);
 
     if (results === true) {
         return res.render('register.view.pug', { userAlreadyExists: true });

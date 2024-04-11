@@ -41,7 +41,7 @@ async function getUserFromDatabase(email, password) {
     }
 };
 
-async function searchUserFromDatabase(email) {
+async function searchEmailInDatabase(email) {
     const sql = "SELECT * FROM `users` WHERE Email = ?";
     try {
         const [rows, fields] = await userConnection.query(sql, [email]);
@@ -95,14 +95,14 @@ async function verifyUser(email, password) {
 
     } catch (error) {
         console.error('Error verifying user:', error);
-        throw error;    
+        return null;   
     }
 }
 
 module.exports = { 
     getAllUsers,
     getUserFromDatabase, 
-    searchUserFromDatabase, 
+    searchEmailInDatabase, 
     addUserToDatabase,
     verifyUser
 };

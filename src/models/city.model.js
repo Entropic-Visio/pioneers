@@ -7,7 +7,7 @@ class City {
         this.countryCode = null;
         this.district = null;
         this.population = null;
-    }
+    };
 
     async getCityInformation() {
         if (typeof this.name !== "string") {
@@ -21,7 +21,7 @@ class City {
                     throw new Error("City not found");
                 }
         }
-    }
+    };
 
     async getCityName() {
         if (typeof this.name !== "string") {
@@ -31,7 +31,7 @@ class City {
                 return this.name
             }
         }
-    }
-}
+    };
+};
 
 module.exports = { City };

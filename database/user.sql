@@ -7,5 +7,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `ID` INT AUTO_INCREMENT PRIMARY KEY,
   `Username` VARCHAR(255) NOT NULL,
   `Email` VARCHAR(255) NOT NULL,
-  `Password` VARCHAR(255) NOT NULL
+  `Password` VARCHAR(255) NOT NULL,
+  `UserType` ENUM('Owner', 'Admin', 'User') NOT NULL DEFAULT 'User'
 );
+
+INSERT INTO `users` (Username, Email, Password, UserType) VALUES ('pioneer.admin', 'admin@pioneer.net', '$argon2id$v=19$m=65536,t=3,p=4$YEXwiNdFpDhJ9drqFR00JA$zUKIZ5KvRAEfb6GcIidBw3jAK2gpWHENRUaPdjDxYgw', 'Admin');
