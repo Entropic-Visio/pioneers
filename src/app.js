@@ -14,7 +14,7 @@ const dashboardRoute = require('./routes/dashboard.route.js');
 const citiesRoute = require('./routes/cities.route.js');
 const accountSettingRoute = require('./routes/accountSetting.route.js');
 
-// ----------- IMPORT MIDDLE WARE ----------- //
+// ----------- IMPORT MIDDLEWARE ----------- //
 const isLoggedIn = require('./middlewares/isLoggedIn.middleware.js');
 
 const app = express();
@@ -43,7 +43,6 @@ app.use('/register', registerRoute);
 app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
 app.use('/account-setting', isLoggedIn, accountSettingRoute);
-app.use('/cities', citiesRoute);
 app.use('/dashboard', isLoggedIn, dashboardRoute);
 
 // ----------- RUN ----------- //

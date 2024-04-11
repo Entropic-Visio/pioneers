@@ -83,8 +83,7 @@ async function verifyUser(email, password) {
         }
   
         const hashedPassword = user[0][0].Password;
-        console.log('Retrieved hashed password:', hashedPassword);
-    
+            
         if (typeof hashedPassword !== 'string' || !hashedPassword.length) {
             console.log(user[0]);
             console.error('Invalid Hashed Password Format');
