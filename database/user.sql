@@ -9,6 +9,3 @@ CREATE TABLE IF NOT EXISTS `users` (
   `Email` VARCHAR(255) NOT NULL,
   `Password` VARCHAR(255) NOT NULL
 );
-
-INSERT INTO `users` (`Username`, `Email`, `Password`) VALUES ('john_doe', 'john@example.com', 'abc');
-INSERT INTO `users` (`Username`, `Email`, `Password`) VALUES ('jane_smith', 'jane@example.com', '123');
