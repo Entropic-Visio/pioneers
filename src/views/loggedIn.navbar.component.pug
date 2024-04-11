@@ -6,18 +6,15 @@ nav.navbar
     i(class="fas fa-bars")
   ul.navbar__menu
     li 
-      a.navbar__menu--links(href="/") Home
+      a.navbar__menu--links(href="/dashboard") Dashboard  
     li
       a.navbar__menu--links(href="/about") About
     li 
       a.navbar__menu--links(href="/contact") Contact
-    li 
-      a.navbar__menu--links(href="/dashboard") Dashboard  
     li.dropdown
       .dropdown__link 
         i(class="fa-solid fa-user") 
         .dropdown__content
-          a.dropdown__content__link(href="/profile") Profile
-          a.dropdown__content__link(href="/account-setting") Account Setting
+          a.dropdown__content__link(href="/account-setting") Account Settings 
           form(action="/logout", method="POST")
             button.dropdown__content__button Logout  

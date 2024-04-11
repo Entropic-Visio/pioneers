@@ -6,35 +6,28 @@ const GetLoginView = (req, res) => {
     return res.render('login.view.pug', { isLoggedIn });
 };
 
-const GetUserInformation = async (req, res) => {
+const LoginUser = async (req, res) => {
     try {
+
+        if (!req.body.email || !req.body.password) {
+            return res.render('login.view.pug', { empty_email: !req.body.email, empty_password: !req.body.password });
+        }
+
         const { email, password } = req.body;
 
-        if(email === "" && password === "") {
-            return res.render('login.view.pug', { empty_email: true, empty_password: true });
-        }
-    
-        if(email === "") {
-            return res.render('login.view.pug', { empty_email: true });
-        }
-    
-        if(password === "") {
-            return res.render('login.view.pug', { empty_password: true });
-        }
-        
-        const results = await userService.getUserFromDatabase(email, password);
+        const user = await userService.verifyUser(email, password);
 
-        if(results === null) {
+        if (!user) {
             return res.render('login.view.pug', { userNotFound: true });
         }
 
         req.session.isLoggedIn = true;
+        req.session.user = user;
         const isLoggedIn = isUserLoggedIn(req);
         return res.render('dashboard.view.pug', { isLoggedIn });
-    
     } catch {
         console.error('Error');
     }
 };
 
-module.exports = { GetLoginView, GetUserInformation };
+module.exports = { GetLoginView, LoginUser };

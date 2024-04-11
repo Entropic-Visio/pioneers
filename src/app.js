@@ -12,6 +12,7 @@ const loginRoute = require('./routes/login.route.js');
 const logoutRoute = require('./routes/logout.route.js');
 const dashboardRoute = require('./routes/dashboard.route.js');
 const citiesRoute = require('./routes/cities.route.js');
+const accountSettingRoute = require('./routes/accountSetting.route.js');
 
 // ----------- IMPORT MIDDLE WARE ----------- //
 const isLoggedIn = require('./middlewares/isLoggedIn.middleware.js');
@@ -41,8 +42,11 @@ app.use('/contact', contactRoute);
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
+app.use('/account-setting', isLoggedIn, accountSettingRoute);
 app.use('/cities', citiesRoute);
-app.use('/dashboard', isLoggedIn, dashboardRoute);// ----------- RUN ----------- //
+app.use('/dashboard', isLoggedIn, dashboardRoute);
+
+// ----------- RUN ----------- //
 app.listen(port, () => {
     console.log(`Server is listening on http://localhost:${port}`);
 });

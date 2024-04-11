@@ -26,6 +26,15 @@ html
             i.form-box__icon.fa-solid.fa-key 
             input.form-box__input(type="password" name="confirmPassword" placeholder="Confirm Password") 
         
+        if passwordDontMatch 
+          p.form-box__error Passwords Dont Match
+
+        if userAlreadyExists 
+          p.form-box__error User Already Exists
+        
+        if emptyField  
+          p.form-box__error Please Fill All Fields
+
         p.form-box__redirect__text Already Have an Account?  
           a.form-box__redirect__link(href="/login") Login  
 

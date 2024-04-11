@@ -1,4 +1,6 @@
 const { userConnection } = require('./db.js');
+const argon2 = require('argon2');
+const passwordHasher = require('../middlewares/passwordHasher.middleware.js');
 
 async function getAllUsers() {
     // SQL query to select all cities from the 'city' table
@@ -27,15 +29,81 @@ async function getUserFromDatabase(email, password) {
         const [rows, fields] = await userConnection.query(sql, [email, password]);
 
         if (rows.length === 0) {
-            return null;
+            return false;
         }
+
         console.log(rows[0]);
-        return rows[0];
+        return true;
 
     } catch (error) {
         console.error('Error Retrieving User from Database:', error);
         return null;
     }
+};
+
+async function searchUserFromDatabase(email) {
+    const sql = "SELECT * FROM `users` WHERE Email = ?";
+    try {
+        const [rows, fields] = await userConnection.query(sql, [email]);
+        console.log("Length", rows.length);
+            
+        if (rows.length === 0) {
+            return false;
+        } else {
+            return true;
+        }
+
+    } catch (error) {
+        console.error('Error Retrieving User from Database:', error);
+        return null;
+    }
+};
+
+async function addUserToDatabase(username, email, password) {
+    const hashedPassword = await passwordHasher(password);
+    const sql = "INSERT INTO users (Username, Email, Password) VALUES (?, ?, ?)";
+    const values = [username, email, hashedPassword];
+    try {
+        console.log('Executing Query:', sql, values);
+        await userConnection.query(sql, values);
+        return true;
+    } catch (error) {
+        console.error("Error Adding User to Database:", error);
+        return false;
+    }
+};
+
+async function verifyUser(email, password) {
+    try {
+
+        const user = await userConnection.query("SELECT * FROM users WHERE Email = ?", [email]);
+  
+        if (!user.length) {
+            return null;
+        }
+  
+        const hashedPassword = user[0][0].Password;
+        console.log('Retrieved hashed password:', hashedPassword);
+    
+        if (typeof hashedPassword !== 'string' || !hashedPassword.length) {
+            console.log(user[0]);
+            console.error('Invalid Hashed Password Format');
+            return null;
+        }
+    
+        const valid = await argon2.verify(hashedPassword, password);
+        return valid ? user[0] : null;
+
+    } catch (error) {
+        console.error('Error verifying user:', error);
+        throw error;    
+    }
 }
 
-module.exports = { getAllUsers, getUserFromDatabase };
+module.exports = { 
+    getAllUsers,
+    getUserFromDatabase, 
+    searchUserFromDatabase, 
+    addUserToDatabase,
+    verifyUser
+};
