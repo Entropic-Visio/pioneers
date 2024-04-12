@@ -23,7 +23,6 @@ const LoginUser = async (req, res) => {
 
         req.session.isLoggedIn = true;
         req.session.user = result;
-        console.log(req.session.user.Password);
         const isLoggedIn = isUserLoggedIn(req);
         return res.render('dashboard.view.pug', { isLoggedIn, user: req.session.user });
     } catch {

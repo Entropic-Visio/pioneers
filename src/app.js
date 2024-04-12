@@ -11,9 +11,11 @@ const registerRoute = require('./routes/register.route.js');
 const loginRoute = require('./routes/login.route.js');
 const logoutRoute = require('./routes/logout.route.js');
 const dashboardRoute = require('./routes/dashboard.route.js');
-const citiesRoute = require('./routes/cities.route.js');
 const accountSettingRoute = require('./routes/accountSetting.route.js');
-
+const adminPanelRoute = require('./routes/adminPanel.route.js');
+const countriesRoute = require('./routes/countries.route.js');
+const citiesRoute = require('./routes/cities.route.js');
+const langaugesRoute = require('./routes/languages.route.js');
 // ----------- IMPORT MIDDLEWARE ----------- //
 const isLoggedIn = require('./middlewares/isLoggedIn.middleware.js');
 
@@ -43,8 +45,11 @@ app.use('/register', registerRoute);
 app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
 app.use('/account-setting', isLoggedIn, accountSettingRoute);
+app.use('/admin-panel', isLoggedIn, adminPanelRoute);
 app.use('/dashboard', isLoggedIn, dashboardRoute);
+app.use('/countries', isLoggedIn, countriesRoute);
 app.use('/cities', isLoggedIn, citiesRoute);
+app.use('/languages', isLoggedIn, langaugesRoute);
 
 // ----------- RUN ----------- //
 app.listen(port, () => {
