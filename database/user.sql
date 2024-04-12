@@ -11,4 +11,4 @@ CREATE TABLE IF NOT EXISTS `users` (
   `UserType` ENUM('Owner', 'Admin', 'User') NOT NULL DEFAULT 'User'
 );
 
-INSERT INTO `users` (Username, Email, Password, UserType) VALUES ('pioneer.admin', 'admin@pioneer.net', '$argon2id$v=19$m=65536,t=3,p=4$YEXwiNdFpDhJ9drqFR00JA$zUKIZ5KvRAEfb6GcIidBw3jAK2gpWHENRUaPdjDxYgw', 'Admin');
+INSERT INTO `users` (Username, Email, Password, UserType) VALUES ('pioneer.admin', 'admin@pioneer.net', '$argon2id$v=19$m=65536,t=3,p=4$e7gshO3UyqxzToEWuHiQNw$drOQcSVhoDXhnTQKQY8WAHEtf6NuzwUr0q+zxZsEtug', 'Admin');

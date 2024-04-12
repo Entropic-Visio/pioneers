@@ -91,7 +91,7 @@ async function verifyUser(email, password) {
         }
     
         const valid = await argon2.verify(hashedPassword, password);
-        return valid ? user[0] : null;
+        return valid ? user[0][0] : null;
 
     } catch (error) {
         console.error('Error verifying user:', error);

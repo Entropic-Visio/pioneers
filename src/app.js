@@ -44,6 +44,7 @@ app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
 app.use('/account-setting', isLoggedIn, accountSettingRoute);
 app.use('/dashboard', isLoggedIn, dashboardRoute);
+app.use('/cities', isLoggedIn, citiesRoute);
 
 // ----------- RUN ----------- //
 app.listen(port, () => {

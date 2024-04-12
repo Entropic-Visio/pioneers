@@ -19,10 +19,11 @@ if isLoggedIn
           .dropdown__content
             a.dropdown__content__link(href="/account-setting") Account Settings
               i.fa-solid.fa-gears.navbar__icons
+              if user.UserType == "Admin"
+                a.dropdown__content__link(href="/admin-panel") Admin Panel 
             form(action="/logout", method="POST")
               button.dropdown__content__button Logout 
                 i.fa-solid.fa-right-from-bracket.navbar__icons
-               
 else 
   nav.navbar
     a.navbar__logo(href="/") Pioneer 
@@ -35,3 +36,4 @@ else
         a.navbar__menu--links(href="/contact") Contact
       li 
         a.navbar__menu--links#button(href="/register") Get Started
+      

@@ -15,16 +15,17 @@ const LoginUser = async (req, res) => {
 
         const { email, password } = req.body;
 
-        const user = await userService.verifyUser(email, password);
+        const result = await userService.verifyUser(email, password);
 
-        if (!user) {
+        if (!result) {
             return res.render('login.view.pug', { userNotFound: true });
         }
 
         req.session.isLoggedIn = true;
-        req.session.user = user;
+        req.session.user = result;
+        console.log(req.session.user.Password);
         const isLoggedIn = isUserLoggedIn(req);
-        return res.render('dashboard.view.pug', { isLoggedIn });
+        return res.render('dashboard.view.pug', { isLoggedIn, user: req.session.user });
     } catch {
         console.error('Error');
     }
