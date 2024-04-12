@@ -289,7 +289,7 @@
 }
 
 .card {
-  width: 100%; /* Take full width by default */
+  width: 90%; /* Take full width by default */
   max-width: 525px; /* Maximum width for larger screens */
   background-color: #52AA5E;
   border-radius: 8px;
@@ -335,6 +335,25 @@
 .card__content__button:hover {
   background-color: #FFFFFF;
   color: #2b2b2b;
+}
+.card__content__red-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 16px;
+  transition: ease 0.3s;
+  border: none;
+  padding: 16px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+.card__content__red-button:hover {
+  background-color: #f74242;
+  color: #FFFFFF;
 }
 
 body {

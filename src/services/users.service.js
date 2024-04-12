@@ -99,10 +99,21 @@ async function verifyUser(email, password) {
     }
 }
 
+async function deleteUserFromDatabase(email, password) {
+    try {
+        await userConnection.query("DELETE FROM users WHERE Email = ?", [email]);
+        return true
+    } catch (error) {
+        console.error('Error Deleting User: ', error);
+        return false;
+    }
+};
+
 module.exports = { 
     getAllUsers,
     getUserFromDatabase, 
     searchEmailInDatabase, 
     addUserToDatabase,
-    verifyUser
+    verifyUser,
+    deleteUserFromDatabase,
 };

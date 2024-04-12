@@ -1,9 +1,9 @@
 const isUserLoggedIn = require('../middlewares/isUserLoggedIn.middleware.js');
-const { getAllUsers } = require('../services/users.service.js');
+const userServices = require('../services/users.service.js');
 
 const GetAllUsers = async (req, res) => {
     try {
-        const results = await getAllUsers();
+        const results = await userServices.getAllUsers();
         return res.json(results);
     } catch (error) {
         console.error("Error Fetching Cities: ", error.message);

@@ -6,6 +6,23 @@ html
     title Pioneer | Account Setting 
   body
     .page
-      h1.page.page__heading Account Settings 
-      p.page.page__text-block Temporary Account Settings Page 
+      .card-container           
+        .card  
+          .card__content 
+            h3.card__content__title Change Username   
+            p.card__content__description Database Settings  
+            a.card__content__button(href="/database-settings") Access
+        
+        .card  
+          .card__content 
+            h3.card__content__title Change Email  
+            p.card__content__description Change Email   
+            a.card__content__button(href="/user-settings") Access 
+          
+        .card  
+          .card__content 
+            h3.card__content__title Delete Account  
+            p.card__content__description Delete Account.
+            form(action="/account-setting/delete-account", method="POST")
+              button(type="submit").card__content__red-button Delete Account  
     

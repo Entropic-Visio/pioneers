@@ -6,5 +6,15 @@ html
     title Pioneer | Admin Panel 
   body
     .page
-      h1.page.page__heading Admin Panel 
-      p.page.page__text-block Temporary Admin Panel Page
+      .card-container           
+        .card  
+          .card__content 
+            h3.card__content__title Database Settings  
+            p.card__content__paragraph Database Settings  
+            a.card__content__button(href="/database-settings") Access
+        
+        .card  
+          .card__content 
+            h3.card__content__title User Settings  
+            p.card__content__paragraph Database Settings  
+            a.card__content__button(href="/user-settings") Access 

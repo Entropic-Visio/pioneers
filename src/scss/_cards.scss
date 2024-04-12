@@ -9,7 +9,7 @@
 }
 
 .card {
-    width: 100%; /* Take full width by default */
+    width: 90%; /* Take full width by default */
     max-width: 525px; /* Maximum width for larger screens */
     background-color: $green;
     border-radius: 8px;
@@ -61,6 +61,29 @@
                 color: #2b2b2b;
             }
         }
+
+        &__red-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #2b2b2b;
+            color: #ffffff;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 16px;
+            transition: ease 0.3s;
+            border: none;
+            padding: 16px;
+            font-size: 14px;
+            font-family: $poppins;
+
+            &:hover {
+                background-color: #f74242;
+                color: $white;
+            }
+        }
+
+
     }
 }
 
